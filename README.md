@@ -34,9 +34,10 @@ Caeser Cipher
 ```
 #include <stdio.h>
 #include <stdlib.h>
- 
-// Function to perform Caesar Cipher encryption void caesarEncrypt(char *text, int key) {
-   for (int i = 0; text[i] != '\0'; i++) { char c = text[i];
+// Function to perform Caesar Cipher encryption
+void caesarEncrypt(char *text, int key) {
+   for (int i = 0; text[i] != '\0'; i++) {
+char c = text[i];
 // Check if the character is an uppercase letter 
     if (c >= 'A' && c <= 'Z') {
     text[i] = ((c - 'A' + key) % 26 + 26) % 26 + 'A';
@@ -56,22 +57,26 @@ caesarEncrypt(text, -key);
 }
 
 int main() {
-char message[100]; // Declare a character array to store the message int key;
+char message[100]; // Declare a character array to store the message
+int key;
 
 printf("Enter the message to encrypt: ");
-fgets(message, sizeof(message), stdin); // Read input from the user printf("Enter the Caesar Cipher key (an integer): ");
+fgets(message, sizeof(message), stdin); // Read input from the user
+printf("Enter the Caesar Cipher key (an integer): ");
 scanf("%d", &key); // Read the key from the user
-// Encrypt the message using the Caesar Cipher caesarEncrypt(message, key); printf("Encrypted Message: %s", message);
+// Encrypt the message using the Caesar Cipher
+caesarEncrypt(message, key);
+printf("Encrypted Message: %s", message);
 // Decrypt the message back to the original
- 
-caesarDecrypt(message, key); printf("Decrypted Message: %s", message); return 0;
+caesarDecrypt(message, key); printf("Decrypted Message: %s", message);
+return 0;
 }
 ```
 
 ## OUTPUT:
-Input : Anna University
+# Input : Anna University
 Encrypted Message : Dqqd Xqlyhuvlwb Decrypted Message : Anna University
-OUTPUT:
+# OUTPUT:
 Simulating Caesar Cipher
 ![Screenshot 2025-03-19 083735](https://github.com/user-attachments/assets/7e6926ac-f468-4ea9-a1af-df266cdba22c)
 
